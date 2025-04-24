@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard Technoglass</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    nav {
+      background-color: #555;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav li {
+      margin: 0 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    article {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      background: #f9f9f9;
+    }
+
+    h1, h2, h3 {
+      color: #333;
+    }
+
+    span {
+      font-weight: bold;
+    }
+
+    canvas {
+      max-width: 600px;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dashboard Technoglass</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#principal">Página Principal</a></li>
+      <li><a href="#objetivo1">Objetivo 1</a></li>
+      <li><a href="#objetivo2">Objetivo 2</a></li>
+      <li><a href="#objetivo3">Objetivo 3</a></li>
+      <li><a href="#objetivo4">Objetivo 4</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- Página principal -->
+    <section id="principal">
+      <article>
+        <h2>Objetivos SMART:</h2>
+
+        <h3>Objetivo 1</h3>
+        <p>Alcanzar 150 seguidores en Instagram y 100 en Facebook para finales de noviembre 2024, mediante contenido mensual e interacción orgánica.</p>
+        <p><span>Equipo:</span> Dana Carlon, Yohali Fernández y Michelle Pérez.</p>
+
+        <h3>Objetivo 2</h3>
+        <p>Evaluar productos con KPIs: CSAT, participación de ventas, markup y tasa de conversión.</p>
+        <p><span>Equipo:</span> Jose Blazquez, Andrea Hernandez, Danna Garcia, Ricardo Aguilar.</p>
+
+        <h3>Objetivo 3</h3>
+        <p>Aumentar alcance, ventas e impresiones en redes sociales en un 20% con publicidad pagada durante 5 días.</p>
+        <p><span>Equipo:</span> Natalia Tirado, Jazmin Quezada, Herik Maldonado.</p>
+
+        <h3>Objetivo 4</h3>
+        <p>Lograr que el 30% del tráfico provenga de redes sociales, con 20% de retención > 1 minuto y tasa de rebote &lt; 70% para noviembre 2024.</p>
+        <p><span>Equipo:</span> Hassel Maciel García, Danna Martinez Carrasco, Gretshell Martinez Figueroa.</p>
+      </article>
+    </section>
+
+    <!-- Objetivo 1 -->
+    <section id="objetivo1">
+      <article>
+        <h2>Objetivo 1: Seguidores en Redes Sociales</h2>
+        <canvas id="grafica1"></canvas>
+      </article>
+    </section>
+
+    <!-- Objetivo 2 -->
+    <section id="objetivo2">
+      <article>
+        <h2>Objetivo 2: KPIs del Producto</h2>
+        <canvas id="grafica2"></canvas>
+      </article>
+    </section>
+
+    <!-- Objetivo 3 -->
+    <section id="objetivo3">
+      <article>
+        <h2>Objetivo 3: Efecto de Publicidad Pagada</h2>
+        <canvas id="grafica3"></canvas>
+      </article>
+    </section>
+
+    <!-- Objetivo 4 -->
+    <section id="objetivo4">
+      <article>
+        <h2>Objetivo 4: Tráfico y Retención Web</h2>
+        <canvas id="grafica4"></canvas>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Technoglass Dashboard</p>
+  </footer>
+
+  <script>
+    // Objetivo 1
+    new Chart(document.getElementById('grafica1').getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: ['Instagram', 'Facebook'],
+        datasets: [{
+          label: 'Seguidores',
+          data: [150, 100],
+          backgroundColor: ['#E1306C', '#3b5998']
+        }]
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Seguidores por Plataforma'
+          }
+        }
+      }
+    });
+
+    // Objetivo 2
+    new Chart(document.getElementById('grafica2').getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: ['CSAT', 'Participación', 'Markup', 'Conversión'],
+        datasets: [{
+          label: 'Porcentaje (%)',
+          data: [85, 70, 60, 50],
+          backgroundColor: '#3498db'
+        }]
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Evaluación de KPIs del Producto'
+          }
+        }
+      }
+    });
+
+    // Objetivo 3
+    new Chart(document.getElementById('grafica3').getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: ['Alcance', 'Ventas', 'Impresiones'],
+        datasets: [{
+          label: 'Antes',
+          data: [1000, 200, 5000],
+          backgroundColor: '#95a5a6'
+        },
+        {
+          label: 'Después',
+          data: [1200, 240, 6000],
+          backgroundColor: '#2ecc71'
+        }]
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Comparación antes y después de publicidad pagada'
+          }
+        }
+      }
+    });
+
+    // Objetivo 4
+    new Chart(document.getElementById('grafica4').getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: ['Tráfico Redes (%)', 'Retención > 1min (%)', 'Tasa de Rebote (%)'],
+        datasets: [{
+          label: 'Resultados',
+          data: [30, 20, 65],
+          backgroundColor: ['#2980b9', '#16a085', '#c0392b']
+        }]
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Métricas de Tráfico Web'
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
